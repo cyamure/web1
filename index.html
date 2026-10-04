@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>web task 1</title>
+    <style>
+      fieldset {
+        width: fit-content;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="top">Задание №1</h1>
+    <h2>Список гиперссылок: </h2>
+    <ul>
+      <li>
+        Абсолютная гиперссылка на главную страницу сайта КубГУ:
+        <a href="http://kubsu.ru/">kubsu.ru</a>
+      </li>
+      <li>
+        Абсолютная гиперссылка на главную страницу КубГУ в HTTPS:
+        <a href="https://kubsu.ru/">https://kubsu.ru/</a>
+      </li>
+      <li>
+        Ссылка-изображение:
+        <br>
+        <a href="https://kubsu.ru/">
+          <img src="image.jpg" alt="Перейти на сайт КубГУ" width="280" height="210">
+        </a>
+      </li>
+      <li>
+        Сокращенная ссылка на внутреннюю страницу:
+        <a href="/about.html">о сайте</a>
+      </li>
+      <li>
+        Сокращенная ссылка на главную страницу:
+        <a href="/">главная страница</a>
+      </li>
+      <li>
+        Ссылка на фрагмент текущей страницы:
+        <a href="#anketa">перейти к анкете</a>
+      </li>
+      <li>
+        Ссылка с тремя параметрами в URL:
+        <a href="https://kubsu.ru/search?query=web&amp;lang=ru&amp;page=2">поиск с тремя параметрами</a>
+      </li>
+      <li>
+        Ссылка с параметром id в URL:
+        <a href="https://kubsu.ru/news?id=99">новость с id = 99</a>
+        <!-- вообще оно ведёт немного не туда поскольку условные новости на сайте 
+         кубгу это https://kubsu.ru/ru/node/xxxxx , а текущая ссылка ведёт чисто 
+         на kubsu.ru/news, по идее если нужен именно айди то news?id=99 -->
+      </li>
+      <li>
+        Относительная ссылка на страницу в текущем каталоге:
+        <a href="./contacts.html">контакты</a>
+      </li>
+      <li>
+        Относительная ссылка на страницу в каталоге about:
+        <a href="about/history.html">история</a>
+      </li>
+      <li>
+        Относительная ссылка на страницу в каталоге уровнем выше текущего:
+        <a href="../sitemap.html">карта сайта</a>
+      </li>
+      <li>
+        Относительная ссылка на страницу в каталоге двумя уровнями выше:
+        <a href="../../index.html">корневая страница</a>
+      </li>
+      <li>
+        <p>
+          Контекстная ссылка в тексте абзаца: изучить
+          <a href="https://kubsu.ru/ru/node/24">внутренние документы</a> КубГУ можно перейдя
+          по ссылке в тексте.
+        </p>
+      </li>
+      <li>
+        Ссылка на фрагмент страницы стороннего сайта:
+        <a href="https://en.wikipedia.org/wiki/HTML#History">история HTML в Википедии</a>
+      </li>
+      <li>
+        Ссылки из прямоугольных и круглых областей картинки:
+        <br>
+        <img src="image.jpg" alt="Карта областей с ссылками" width="560" height="420" usemap="#linkmap">
+        <map name="linkmap">
+          <area shape="rect" coords="20,20,260,200" href="https://kubsu.ru/" alt="Прямоугольная область: главная страница КубГУ">
+          <area shape="rect" coords="300,20,540,200" href="https://www.w3.org/" alt="Прямоугольная область: сайт W3C">
+          <area shape="circle" coords="140,310,80" href="https://validator.w3.org/" alt="Круглая область: валидатор W3C">
+          <area shape="circle" coords="420,310,80" href="https://developer.mozilla.org/ru/" alt="Круглая область: справочник MDN">
+        </map>
+      </li>
+      <li>
+        Ссылка с пустым href:
+        <a href="">ссылка на текущую страницу</a>
+      </li>
+      <li>
+        Ссылка без href:
+        <a>неактивная ссылка</a>
+      </li>
+      <li>
+        Ссылка, по которой запрещен переход поисковикам:
+        <a href="https://kubsu.ru/" rel="nofollow">переход запрещен поисковикам</a>
+      </li>
+      <li>
+        Ссылка, запрещенная для индексации поисковиками:
+        <!--noindex--><a href="https://kubsu.ru/" rel="nofollow">не индексируется поисковиками</a><!--/noindex-->
+      </li>
+      <li>
+        Нумерованный список ссылок с подписями title:
+        <ol>
+          <li><a href="https://kubsu.ru/" title="Главная страница КубГУ">КубГУ</a></li>
+          <li><a href="https://www.w3.org/" title="Консорциум Всемирной паутины">W3C</a></li>
+          <li><a href="https://html.spec.whatwg.org/" title="Живой стандарт HTML">Стандарт HTML</a></li>
+        </ol>
+      </li>
+      <li>
+        Ссылка на файл на сервере FTP с авторизацией:
+        <a href="ftp://student:secret@ftp.kubsu.ru/pub/readme.txt">readme.txt по FTP</a>
+      </li>
+    </ul>
+
+    <h2 id="anketa">Анкета</h2>
+
+    <form action="/" method="post">
+
+      <p>
+        <label>
+          ФИО:<br>
+          <input name="fullname" type="text" placeholder="Иванов Иван Иванович">
+        </label>
+      </p>
+
+      <p>
+        <label>
+          Телефон:<br>
+          <input name="phone" type="tel" placeholder="+7 (900) 000-00-00">
+        </label>
+      </p>
+
+      <p>
+        <label>
+          E-mail:<br>
+          <input name="email" type="email" placeholder="student@example.com">
+        </label>
+      </p>
+
+      <p>
+        <label>
+          Дата рождения:<br>
+          <input name="birthday" type="date">
+        </label>
+      </p>
+
+      <fieldset>
+        <legend>Пол</legend>
+        <label>
+          <input name="gender" type="radio" value="male" checked>
+          Мужской
+        </label>
+        <label>
+          <input name="gender" type="radio" value="female">
+          Женский
+        </label>
+      </fieldset>
+
+      <p>
+        <label>
+          Любимый язык программирования (Зажмите клавишу Crtl для выбора нескольких вариантов):<br>
+          <select name="languages" multiple size="11">
+            <option>Pascal</option>
+            <option>C</option>
+            <option>C++</option>
+            <option>JavaScript</option>
+            <option>PHP</option>
+            <option selected>Python</option>
+            <option>Java</option>
+            <option>Haskel</option>
+            <option>Clojure</option>
+            <option>Prolog</option>
+            <option>Scala</option>
+          </select>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          Биография:<br>
+          <textarea name="biography" rows="6" cols="40" placeholder="Расскажите о себе"></textarea>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input name="contract" type="checkbox" checked>
+          С контрактом ознакомлен(а)
+        </label>
+      </p>
+
+      <p>
+        <input type="submit" value="Сохранить">
+      </p>
+
+    </form>
+
+  </body>
+
+</html>
